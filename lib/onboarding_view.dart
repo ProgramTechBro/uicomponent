@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'onboarding_controller.dart';
 
 class OnboardingView extends StatelessWidget {
-  OnboardingView({Key? key}) : super(key: key);
+  OnboardingView({super.key});
 
   final List<Map<String, String>> onboardingData = [
     {

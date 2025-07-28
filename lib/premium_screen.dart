@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PremiumScreen extends StatefulWidget {
-  const PremiumScreen({Key? key}) : super(key: key);
+  const PremiumScreen({super.key});
 
   @override
   State<PremiumScreen> createState() => _PremiumScreenState();
@@ -28,7 +28,7 @@ class _PremiumScreenState extends State<PremiumScreen> {
       body: Column(
         children: [
           // Image section with screenHeight * 1.3
-          Container(
+          SizedBox(
             height: screenHeight * 1.3,
             width: double.infinity,
             child: Stack(
