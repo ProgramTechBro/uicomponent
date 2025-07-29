@@ -1,10 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'ask_question_screen.dart';
 import 'onboarding_view.dart';
 import 'premium_screen.dart';
+import 'forget_password_screen.dart';
+import 'login_example_screen.dart';
+import 'dashboard_screen.dart';
+import 'navigation_demo_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -18,11 +25,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: '/onboarding',
+      initialRoute: '/demo',
       getPages: [
+        GetPage(name: '/demo', page: () => const NavigationDemoScreen()),
         GetPage(name: '/onboarding', page: () => OnboardingView()),
         GetPage(name: '/ask', page: () => const AskQuestionScreen()),
         GetPage(name: '/premium', page: () => const PremiumScreen()),
+        GetPage(name: '/forget-password', page: () => const ForgetPasswordScreen()),
+        GetPage(name: '/login', page: () => const LoginExampleScreen()),
+        GetPage(name: '/dashboard', page: () => const DashboardScreen()),
       ],
     );
   }
